@@ -43,7 +43,6 @@ const loadSingleCardDetails=async(id)=>{
     `
     document.getElementById("my_modal_5").showModal()
 }
-
 const remove = ()=>{
         const allBtn = document.querySelectorAll('.lesson-btn')
 
@@ -64,7 +63,6 @@ const loadLevelId = (id)=>{
         singleLessonData(json.data)
     })
 }
-
 const singleLessonData = (words)=>{
     const cardContainer = document.getElementById("card_container")
     cardContainer.innerHTML = ""
@@ -100,7 +98,6 @@ const singleLessonData = (words)=>{
         spiner(false)
     })
 }
-
 const lessonArray = (lesson)=>{
     const levelContainer = document.getElementById("button_container");
     levelContainer.innerHTML = ""
@@ -116,7 +113,6 @@ const lessonArray = (lesson)=>{
     }
 }
 loadLessons()
-
 document.getElementById("input_btn").addEventListener('click',()=>{
   const input = document.getElementById("input_text")
   const searchBtn = input.value.trim().toLowerCase()
