@@ -21,7 +21,6 @@ const loadSingleCardDetails=async(id)=>{
     const res = await fetch(url)
     const detials = await res.json()
     const data = detials.data
-    console.log(data)
     const modelText = document.getElementById("model_box")
     modelText.innerHTML = `
         <div class="modal-box space-y-3">
@@ -44,19 +43,23 @@ const loadSingleCardDetails=async(id)=>{
     `
     document.getElementById("my_modal_5").showModal()
 }
-const loadLevelId = (id)=>{
-    spiner(true)
-    const url =`https://openapi.programming-hero.com/api/level/${id}`
-    fetch(url)
-    .then((res)=>res.json())
-    .then((json)=> {
-        const singleBtn = document.getElementById(`btn-id-${id}`)
+
+const remove = ()=>{
         const allBtn = document.querySelectorAll('.lesson-btn')
 
         allBtn.forEach((item)=>{
             item.classList.remove("active")
         })
 
+}
+const loadLevelId = (id)=>{
+    spiner(true)
+    const url =`https://openapi.programming-hero.com/api/level/${id}`
+    fetch(url)
+    .then((res)=>res.json())
+    .then((json)=> {
+        remove()
+        const singleBtn = document.getElementById(`btn-id-${id}`)
         singleBtn.classList.add("active")
         singleLessonData(json.data)
     })
@@ -114,3 +117,17 @@ const lessonArray = (lesson)=>{
 }
 loadLessons()
 
+document.getElementById("input_btn").addEventListener('click',()=>{
+  const input = document.getElementById("input_text")
+  const searchBtn = input.value.trim().toLowerCase()
+
+  fetch("https://openapi.programming-hero.com/api/words/all")
+  .then((res)=> res.json())
+  .then((details) => {
+    const allData = details.data
+    const filterData = allData.filter((item)=>item.word.toLowerCase().includes(searchBtn))
+    remove()
+    singleLessonData(filterData)
+  })
+
+})
