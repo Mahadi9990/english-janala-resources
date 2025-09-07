@@ -43,6 +43,11 @@ const loadSingleCardDetails=async(id)=>{
     `
     document.getElementById("my_modal_5").showModal()
 }
+function pronounceWord(word) {
+  const utterance = new SpeechSynthesisUtterance(word);
+  utterance.lang = "en-EN"; // English
+  window.speechSynthesis.speak(utterance);
+}
 const remove = ()=>{
         const allBtn = document.querySelectorAll('.lesson-btn')
 
@@ -90,7 +95,7 @@ const singleLessonData = (words)=>{
           </div>
           <div class="icon flex justify-between items-center">
             <button onclick="loadSingleCardDetails(${word.id})" class="btn"><i class="fa-solid fa-circle-info"></i></button>
-            <button class="btn"><i class="fa-solid fa-volume-high"></i></button>
+            <button onclick="pronounceWord('${word.word}')" class="btn"><i class="fa-solid fa-volume-high"></i></button>
           </div>
         </div>
         `
