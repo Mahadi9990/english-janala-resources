@@ -93,37 +93,64 @@
     </header>
     <main>
       <section>
-        <div class="banner_area p-4 flex flex-col-reverse md:flex-row justify-between items-center">
-        <div class="text_area flex-1 text-center md:text-left p-3">
-          <div class="text_content ">
-            <h1 class="text-4xl font-extrabold mb-3"><span class="text-sky-600">English</span> is Easy!!</h1>
-            <p class="my-2">
-              আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা
-              আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে
-              যাবে অন্য একটি Level এ
-            </p>
+        <div
+          class="banner_area p-4 flex flex-col-reverse md:flex-row justify-between items-center"
+        >
+          <div class="text_area flex-1 text-center md:text-left p-3">
+            <div class="text_content">
+              <h1 class="text-4xl font-extrabold mb-3">
+                <span class="text-sky-600">English</span> is Easy!!
+              </h1>
+              <p class="my-2">
+                আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন
+                অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে
+                নিয়ে যাবে অন্য একটি Level এ
+              </p>
+            </div>
+            <div class="form_area">
+              <form action=""></form>
+            </div>
           </div>
-          <div class="form_area">
-            <form action=""></form>
+          <div class="image_area flex-1">
+            <img src="assets/hero-student.png" alt="" />
           </div>
         </div>
-        <div class="image_area flex-1 ">
-          <img src="assets/hero-student.png" alt="" />
-        </div>
-      </div>
       </section>
       <section class="my-5">
-        <h1 class="text-3xl font-extrabold text-center mb-3"><span class="text-sky-600">Let's</span> Learn Vocabularies</h1>
-        <div id="button_container" class="flex justify-center items-center gap-4 flex-wrap">
+        <h1 class="text-3xl font-extrabold text-center mb-3">
+          <span class="text-sky-600">Let's</span> Learn Vocabularies
+        </h1>
+        <div
+          id="button_container"
+          class="flex justify-center items-center gap-4 flex-wrap"
+        ></div>
+      </section>
+      <section  class="flex justify-center items-center mt-10 ">
+       <div id="loader" class="hidden">
+         <span class="loading loading-bars loading-xs"></span>
+        <span class="loading loading-bars loading-sm"></span>
+        <span class="loading loading-bars loading-md"></span>
+        <span class="loading loading-bars loading-lg"></span>
+        <span class="loading loading-bars loading-xl"></span>
+       </div>
+      </section>
+      <section id="card_container"
+        class="my-10 bg-gray-100 p-10 w-11/12 mx-auto gap-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+        <div class="h-40 sm:h-30 md:h-20 col-span-full text-center space-y-3">
+          <p class="text-xs sm:text-sm tex md:text-xl text-gray-400">
+            আপনি এখনো কোন Lesson Select করেন নাই
+          </p>
+          <h1 class="text-xl sm:text-2xl md:text-4xl font-extrabold">
+            একটি Lesson Select করুন।
+          </h1>
+        </div>
+      </section>
 
-        </div>
-      </section>
-      <section id="card_container" class=" my-10 bg-gray-100 p-10 w-11/12 mx-auto gap-3 grid grid-cols-3">
-        <div class="col-span-full text-center space-y-3">
-          <p class="text-xl text-gray-400">আপনি এখনো কোন Lesson Select করেন নাই</p>
-          <h1 class="text-4xl font-extrabold">একটি Lesson Select করুন।</h1>
-        </div>
-      </section>
+      <!-- Open the modal using ID.showModal() method -->
+
+      <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box mx-auto" id="model_box"></div>
+      </dialog>
     </main>
     <script src="script/index.js"></script>
   </body>
